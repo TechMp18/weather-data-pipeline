@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weather Data Pipeline Monitoring Dashboard — ETL pipeline status and weather analytics">
+    <title>🌦️ Weather Pipeline Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- HEADER — Dashboard ka title aur pipeline stats -->
+    <!-- ============================================= -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">🌦️</span>
+                <div>
+                    <h1>Weather Data Pipeline</h1>
+                    <p class="subtitle">ETL Monitoring Dashboard</p>
+                </div>
+            </div>
+            <button id="run-pipeline-btn" class="btn-primary" onclick="runPipeline()">
+                <span class="btn-icon">🚀</span> Run Pipeline
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+        <!-- ============================================= -->
+        <!-- STATS CARDS — Pipeline ke overall stats       -->
+        <!-- ============================================= -->
+        <section class="stats-grid" id="stats-grid">
+            <div class="stat-card" id="stat-total-records">
+                <div class="stat-icon">📊</div>
+                <div class="stat-info">
+                    <span class="stat-value" id="total-records">—</span>
+                    <span class="stat-label">Total Records</span>
+                </div>
+            </div>
+            <div class="stat-card" id="stat-total-cities">
+                <div class="stat-icon">🏙️</div>
+                <div class="stat-info">
+                    <span class="stat-value" id="total-cities">—</span>
+                    <span class="stat-label">Cities Tracked</span>
+                </div>
+            </div>
+            <div class="stat-card" id="stat-avg-temp">
+                <div class="stat-icon">🌡️</div>
+                <div class="stat-info">
+                    <span class="stat-value" id="avg-temp">—</span>
+                    <span class="stat-label">Avg Temperature</span>
+                </div>
+            </div>
+            <div class="stat-card" id="stat-last-run">
+                <div class="stat-icon">⏰</div>
+                <div class="stat-info">
+                    <span class="stat-value" id="last-run">—</span>
+                    <span class="stat-label">Last Pipeline Run</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- CITY SUMMARY TABLE — Har city ka summary      -->
+        <!-- ============================================= -->
+        <section class="card" id="city-summary-section">
+            <div class="card-header">
+                <h2>📈 City-wise Weather Summary</h2>
+                <span class="badge" id="summary-count">Loading...</span>
+            </div>
+            <div class="table-wrapper">
+                <table id="summary-table">
+                    <thead>
+                        <tr>
+                            <th>City</th>
+                            <th>Avg Temp (°C)</th>
+                            <th>Min Temp</th>
+                            <th>Max Temp</th>
+                            <th>Avg Humidity</th>
+                            <th>Records</th>
+                            <th>Temp Bar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="summary-body">
+                        <!-- JavaScript will fill this -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- TEMPERATURE CHART — Visual bar chart          -->
+        <!-- ============================================= -->
+        <section class="card" id="chart-section">
+            <div class="card-header">
+                <h2>🌡️ Temperature Comparison</h2>
+            </div>
+            <div class="chart-container" id="temp-chart">
+                <!-- JavaScript will fill this with bars -->
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- LATEST RECORDS — Recent weather data          -->
+        <!-- ============================================= -->
+        <section class="card" id="records-section">
+            <div class="card-header">
+                <h2>📋 Latest Weather Records</h2>
+                <span class="badge" id="records-count">Loading...</span>
+            </div>
+            <div class="table-wrapper">
+                <table id="records-table">
+                    <thead>
+                        <tr>
+                            <th>City</th>
+                            <th>Temp (°C)</th>
+                            <th>Feels Like</th>
+                            <th>Humidity</th>
+                            <th>Condition</th>
+                            <th>Category</th>
+                            <th>Comfort</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="records-body">
+                        <!-- JavaScript will fill this -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- PIPELINE LOG — Status messages                -->
+        <!-- ============================================= -->
+        <section class="card" id="log-section">
+            <div class="card-header">
+                <h2>📝 Pipeline Activity Log</h2>
+                <button class="btn-secondary" onclick="clearLog()">Clear</button>
+            </div>
+            <div class="log-container" id="pipeline-log">
+                <div class="log-entry log-info">Dashboard loaded. Fetching data...</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Weather Data Pipeline — Built with Python, Flask, SQLite & JavaScript</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+# ============================================================================
+# requirements.txt — Project ki Dependencies (Zaruri Libraries)
+# ============================================================================
+#
+# 🎯 YEH FILE KYA HAI?
+# Jab tum koi Python project banate ho, toh tumhe kuch extra tools/libraries
+# chahiye hoti hain jo Python ke saath default nahi aati. Yeh file un sab
+# libraries ki list hai.
+#
+# 📦 INSTALL KAISE KARE?
+# Terminal mein ye command run karo:
+#   pip install -r requirements.txt
+# Ye command is file ko padhegi aur sab libraries ek saath install kar degi!
+# ============================================================================
+
+requests>=2.31.0
+# ☝️ requests — HTTP requests bhejne ke liye (API se data maangne ke liye)
+# Jaise browser URL open karta hai, waise ye library code se URLs open karti hai
+
+flask>=3.0.0
+# ☝️ flask — Lightweight web server banane ke liye
+# Dashboard ke liye ek chhota server chalayenge jo data serve karega
+
+schedule>=1.2.0
+# ☝️ schedule — Pipeline ko automatically repeat karne ke liye
+# "Har 30 min mein yeh function chalao" — aise kaam ke liye
+
+pytest>=7.4.0
+# ☝️ pytest — Testing framework
+# Apne code ko test karne ke liye — "kya yeh function sahi result de raha hai?"
+
+gunicorn>=21.2.0
+# ☝️ gunicorn — Production web server (Render pe Flask chalane ke liye)
+# Flask ka built-in server sirf development ke liye hai, production mein gunicorn use hota hai
